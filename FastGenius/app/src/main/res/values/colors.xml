@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="bg1">#DDF7FF</color>
+    <color name="bg">#EDFFFD</color>
+    <color name="colorAccent">#FF9EC4</color>
+    <color name="colorHyrja">#B2C5FF</color>
+    <color name="gjelber">#D9FFD6</color>
+    <color name="error">#FF0800</color>
+    <color name="kalter">#87A5FF</color>
+    <color name="perseri">#CCBFFF</color>
+</resources>

@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Speeds wisely</string>
+    <string name="PershkrimiLojes">Loja fillon sapo te shtypni butonin Fillo! Ju urojme fat!Ju duhet te i shtypni numrat me rend (prej numrit me te vogelit deri te me i madhi) dhe sa me shpejte qe te jete e mundur! Provoni veten tuaj!</string>
+    <string name="PershkrimiLojesNdihme"></string>
+    <string name="title_activity_hyrja">Shkruaje emrin</string>
+
+
+    <string name="prompt_user">Emri juaj</string>
+    <string name="action_sign_in">Hap lojen</string>
+    <string name="action_sign_in_short">Hap lojen</string>
+
+</resources>
