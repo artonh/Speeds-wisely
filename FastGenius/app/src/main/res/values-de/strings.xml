@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Speeds wisely</string>
+    <string name="Exit">Spiel beenden</string>
+    <string name="HighScore">HighScores</string>
+    <string name="Option">Option</string>
+    <string name="PershkrimiLojes">Das Spiel beginnt, wenn Sie die Schaltfläche „Jetzt starten!“ Versuchen Sie, diese, gute locky!</string>
+    <string name="fillo_tani">Jetzt starten</string>
+    <string name="about_us">Speeds wisely - vz1.0\n\nDieses Spiel wird auf Datei Mobile Device Programing entwickelt, die Idee von prof. Arbnor während Halili wird vom Studenten Arton Hoti entwickelt.\n\n© Arton Hoti\narti._3@hotmail.com</string>
+    <string name="action_sign_in">Öffnen Spiel</string>
+    <string name="action_sign_in_short">Öffnen Spiel</string>
+    <string name="menu_action_about_us">nfo über App</string>
+    <string name="menu_action_setting">Option</string>
+    <string name="piket">Rekord</string>
+    <string name="prompt_user">Ihr Name</string>
+    <string name="reset_rekordet">Setzen sie alle rekord</string>
+    <string name="title_activity_hyrja">Schreiben sie ihren namen</string>
+    <string name="user">Benutzer</string>
+    <string name="PershkrimiLojesNdihme">In diesem Spiel müssen Sie die Sequenznummern drücken (kleiner Zahl auf die größere Zahl) und so schnell wie möglich!</string>
+</resources>

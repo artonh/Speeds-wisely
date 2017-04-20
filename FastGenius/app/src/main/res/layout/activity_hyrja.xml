@@ -2,28 +2,51 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+   android:background="@drawable/grad"
+    android:weightSum="1">
+<android.support.v7.widget.Toolbar
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/colorPrimary"
+    android:minHeight="?attr/actionBarSize"
+    app:theme="@style/ThemeOverlay.AppCompat.Dark"
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+    android:layout_weight="0.09" />
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@drawable/grad">
-
-
+    android:background="@drawable/grad"
+    android:weightSum="1">
 
 
     <LinearLayout
         android:id="@+id/email_login_form"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_weight="0.29">
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/PershkrimiLojesNdihme"
+            android:textSize="16dp"
+            android:textColor="#447760"
             />
 
         <EditText
@@ -38,90 +61,59 @@
         <Button
             android:id="@+id/btnHapLojen"
             style="?android:textAppearanceSmall"
-            android:layout_width="match_parent"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="36dp"
             android:background="@drawable/gradbut"
             android:text="@string/action_sign_in"
             android:textSize="16dp"
             android:textStyle="bold"
-            android:layout_marginLeft="80dp"
-            android:layout_marginRight="80dp"/>
-
-        <TextView
-            android:layout_marginTop="36dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Kliko ketu per te shikuar rekordet e lojes"
-            android:layout_gravity="center"
-            android:background="@color/bg1"
-            android:id="@+id/lblRekordi"
+            android:layout_marginLeft="30dp"
+            android:layout_centerHorizontal="true"
             />
-        <ScrollView
-            android:id="@+id/login_form"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingBottom="15dp">
-            <TableLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="18dp"
-                android:paddingBottom="15dp"
-                android:visibility="invisible"
-                android:id="@+id/tlPjesaRekordeve">
-                <TableRow>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="47dp"
-                        android:text="Useri"
-                        />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="45dp"
-                        android:text="Piket"
-                        />
-                </TableRow>
 
-                    <TextView
-                        android:layout_height="wrap_content"
-                        android:layout_width="match_parent"
-                        android:layout_gravity="center"
-                        android:text=" --------------------------------------- "
-                        android:id="@+id/txtVijaHorizontale"
-                        />
-                <TableRow
-                    android:background="#CCBFFF">
-                    <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=""
-                    android:layout_gravity="left"
-                    android:id="@+id/rekordiUser"
-                    />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=""
-                        android:layout_gravity="right"
-                        android:id="@+id/rekordiPiket"
-                        />
-                </TableRow>
+        <Button
+            android:id="@+id/btnHighScore"
+            style="?android:textAppearanceSmall"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/gradbut"
+            android:text="@string/HighScore"
+            android:textSize="16dp"
+            android:layout_marginLeft="30dp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"/>
+        <Button
+            android:id="@+id/btnOpsione"
+            style="?android:textAppearanceSmall"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/gradbut"
+            android:text="@string/Option"
+            android:textSize="16dp"
+            android:layout_marginLeft="30dp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"/>
+        <Button
+            android:id="@+id/btnExit"
+            style="?android:textAppearanceSmall"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/gradbut"
+            android:text="@string/Exit"
+            android:textSize="16dp"
+            android:layout_marginLeft="30dp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="right"
-                    android:layout_marginTop="10dp"
-                    android:text="Fshij te gjitha rekordet"
-                    android:id="@+id/tvFshijDB"/>
-            </TableLayout>
-        </ScrollView>
+
 
 
 
     </LinearLayout>
 
+</LinearLayout>
 </LinearLayout>

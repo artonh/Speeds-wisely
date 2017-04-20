@@ -29,9 +29,8 @@
         android:id="@+id/btnFillo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Fillo tani!"
+        android:text="@string/fillo_tani"
         android:fontFamily="sans-serif-light"
-        android:layout_marginLeft="160dp"
         android:textSize="16dp"
         android:background="@drawable/gradbut"
         android:layout_below="@+id/txtUseri"
@@ -172,11 +171,12 @@
         </TableRow>
         <ImageView
             android:id="@+id/imageView1"
-            android:layout_width="435dp"
-            android:layout_height="239dp"
+            android:layout_width="405dp"
+            android:layout_height="260dp"
             android:scaleType="fitCenter"
-            android:src="@mipmap/foto2"
-            android:layout_weight="10.75"/>
+            android:src="@mipmap/pamjalojes"
+            android:layout_weight="10.75"
+            />
             <!--android:alpha=".85" kjo vendos alpherin-->
 
         <TableLayout>

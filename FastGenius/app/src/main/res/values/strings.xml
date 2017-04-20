@@ -1,12 +1,22 @@
 <resources>
     <string name="app_name">Speeds wisely</string>
-    <string name="PershkrimiLojes">Loja fillon sapo te shtypni butonin Fillo! Ju urojme fat!Ju duhet te i shtypni numrat me rend (prej numrit me te vogelit deri te me i madhi) dhe sa me shpejte qe te jete e mundur! Provoni veten tuaj!</string>
-    <string name="PershkrimiLojesNdihme"></string>
+    <string name="PershkrimiLojes">Loja fillon sapo të shtypni butonin FILLO TANI!\n Provoni vetën tuaj, ju urojmë fat!!</string>
+    <string name="PershkrimiLojesNdihme">Në këtë lojë, ju duhet të i shtypni numrat me rend (prej numerit më të vogël deri tek numëri më i madhë) dhe sa më shpejte që të jetë e mundur!</string>
     <string name="title_activity_hyrja">Shkruaje emrin</string>
 
 
     <string name="prompt_user">Emri juaj</string>
     <string name="action_sign_in">Hap lojen</string>
     <string name="action_sign_in_short">Hap lojen</string>
+    <string name="HighScore">Rekordet e lojes</string>
+    <string name="Option">Opsione</string>
+    <string name="Exit">Mbyll lojen</string>
+    <string name="menu_action_setting">Opsione</string>
+    <string name="menu_action_about_us">Rreth Aplikacionit</string>
+    <string name="about_us">Speeds wisely - vz1.0\n\nKjo lojë është zhvilluar në kuader të lëndës Mobile Device Programing, ideja e prof. Arbnor Halili ndersa eshte zhvilluar nga studenti Arton Hoti. \n\n© Arton Hoti\nArti._3@hotmail.com  \"</string>
+    <string name="reset_rekordet">Reset rekordet</string>
+    <string name="user">Useri</string>
+    <string name="piket">Piket</string>
+    <string name="fillo_tani">Fillo Tani</string>
 
 </resources>

@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,8 +14,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import org.w3c.dom.Text;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -33,11 +32,12 @@ public class MainActivity extends AppCompatActivity {
     double koha_ne_Sekond;
     int koha_ne_minut=0, koha_ne_sec=0;
     Timer tmr; //per cdo tick me shkrujt ne txView
-    DecimalFormat dec = new DecimalFormat("#");
+    DecimalFormat dec = new DecimalFormat("#.00");
     boolean hera=false;
     String[] strIDuhur = new String[6];
     List<String> list2;
     int rasti=1;
+
 
     public void GjeneroRastesite(){
         String[] strlejuar = new String[]{"1","2","3","4","5","6","7","8","9"}; //nga ky string lejohet te formohet vargu prej 6nr
@@ -85,13 +85,14 @@ public class MainActivity extends AppCompatActivity {
     public void ruajNeDB(String emri, String rekodi){ //rekordiTani > rekordiMeHeret ? ruajneDB,""
         databaza objDatabaza = new databaza(MainActivity.this);
         SQLiteDatabase db=objDatabaza.getWritableDatabase();
-/*
+
         Cursor cursor = null;
         String sql ="SELECT * FROM "+Parameters.TabelaPerdoruesi+" WHERE "+Parameters.vcEmri+"='"+emri+"'";
-        cursor= db.rawQuery(sql,null);
-
-        if(cursor.getCount()>0)//krahaso nese eshte me i madh rekordi nese po inserto nese jo JO
-        {Log.i("RRESHTAT",cursor.getCount()+"");
+        cursor = db.rawQuery(sql,null);
+        cursor.moveToFirst();
+        if(cursor.getCount()>0)//a ekziston ne DB ai perdorues
+        {
+            Log.i("RRESHTAT",cursor.getCount()+"");
             String DBrek="", id=""; String[] vgkoha, DBvgKoha;
             DBrek = cursor.getString(2);
             id=cursor.getString(0);
@@ -111,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
             Log.i("DBnrMinutave",DBnrmin+"");
             Log.i("nrSekodnd",nrsec+"");
             Log.i("DBnrsec",DBnrsec+"");
+            //krahaso nese eshte me i madh rekordi nese po inserto nese jo JO
             if (nrmin < DBnrmin)
             {//upd
                 ContentValues cvup = new ContentValues();
@@ -123,21 +125,26 @@ public class MainActivity extends AppCompatActivity {
                 {//update ne db
                     ContentValues cvup = new ContentValues();
                     cvup.put(Parameters.vcRekordi,rekodi);
-                    db.update(Parameters.TabelaPerdoruesi, cvup, Parameters.PerdoruesiID+id, null);
+                    try {
+                        db.update(Parameters.TabelaPerdoruesi, cvup, Parameters.PerdoruesiID +"="+ id, null);
+                    }
+                    catch (Exception ex)
+                    {
+                        String s = ex.toString();
+                    }
                 }
             }
         }
 
-        else
-        {//Ky perdorues nuk ekziston, e shtojme
-*/
+        else //Ky perdorues nuk ekziston, e shtojme
+        {
             ContentValues cv = new ContentValues();
             cv.put(Parameters.vcEmri,emri);
             cv.put(Parameters.vcRekordi,rekodi);
 
             long affectedRows = db.insert(Parameters.TabelaPerdoruesi, null, cv);
             Log.i("AffectedRows",affectedRows+"");
-        //}
+        }
     }
 
     public String Koha(long kohamoment){
@@ -217,8 +224,12 @@ public class MainActivity extends AppCompatActivity {
         rasti=1; //
         tmr.cancel();
         txtPerfundimi.setText("GABIM! Radha tjeter ishte tek numri: "+nrRadhes+"\nHumbet per kaq kohe: "+Koha(kohaPerfundimit));
-
+        if(Parameters.Audio) {
+            MediaPlayer HumbSound = MediaPlayer.create(this, R.raw.die);
+            HumbSound.start();
+        }
         kohafillimit = 0;  // per te mos pasur mundesi me te vazhdoj lojen!
+        Prapavija();
     }
     public void FitoiLojen(){
         tmr.cancel();
@@ -226,6 +237,30 @@ public class MainActivity extends AppCompatActivity {
         ruajNeDB(Parameters.emri,Koha(kohaPerfundimit));
         kohafillimit=0;  // per te mos pasur mundesi me te vazhdoj lojen!
         rasti=1; //
+        if(Parameters.Audio) {
+            MediaPlayer FitoSound = MediaPlayer.create(this, R.raw.wins);
+            FitoSound.start();
+        }
+    }
+    public void Vazhdo(){
+        if(Parameters.Audio){
+            MediaPlayer BonuseSound = MediaPlayer.create(this, R.raw.coin);
+            BonuseSound.start();
+        }
+    }
+    public void Prapavija(){
+        if(Parameters.Audio) {
+            MediaPlayer PrapavijaSound = MediaPlayer.create(this, R.raw.ambienti);
+            //PrapavijaSound.start();
+            if (PrapavijaSound.isPlaying()) {
+                PrapavijaSound.stop();
+            } else {
+                PrapavijaSound.reset();
+                //PrapavijaSound.setDataSource(R.raw.ambienti);  //or InputStream etc.
+                //PrapavijaSound.prepare();
+                PrapavijaSound.start();
+            }
+        }
     }
 
     @Override
@@ -266,6 +301,7 @@ public class MainActivity extends AppCompatActivity {
                     txtKoha.setText("");
                     GjeneroRastesite(); //gjeneron numrin random, rregullon poziten e butonave
                     rasti=0; //derisa te humb lojetari, mos te mundet ta shtyp me kete buton ...per shkak te Timerit
+                    Prapavija();
                 }
             }
         });
@@ -273,6 +309,7 @@ public class MainActivity extends AppCompatActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 kohaPerfundimit= SystemClock.elapsedRealtime();
                 if (kohafillimit != 0) //a eshte startuar loja
                 {
@@ -287,7 +324,12 @@ public class MainActivity extends AppCompatActivity {
                         {
                             HumbetLojen();
                             btn1.setBackgroundColor(Color.RED);
-                        } else btn1.setVisibility(View.INVISIBLE);
+                        }
+                        else {
+                            btn1.setVisibility(View.INVISIBLE);
+                            Vazhdo();
+                        }
+
                     }
                 }
                 else
@@ -313,7 +355,10 @@ public class MainActivity extends AppCompatActivity {
                         if (nrRadhes != btn2.getText().toString()) {
                             HumbetLojen();
                             btn2.setBackgroundColor(Color.RED);
-                        } else btn2.setVisibility(View.INVISIBLE);
+                        } else {
+                            btn2.setVisibility(View.INVISIBLE);
+                            Vazhdo();
+                        }
                     }
                 }
                 else
@@ -339,7 +384,10 @@ public class MainActivity extends AppCompatActivity {
                         if (nrRadhes != btn3.getText().toString()) {
                             HumbetLojen();
                             btn3.setBackgroundColor(Color.RED);
-                        } else btn3.setVisibility(View.INVISIBLE);
+                        } else {
+                            Vazhdo();
+                            btn3.setVisibility(View.INVISIBLE);
+                        }
                     }
                 }
                 else
@@ -364,7 +412,10 @@ public class MainActivity extends AppCompatActivity {
                         if (nrRadhes != btn4.getText().toString()) {
                             HumbetLojen();
                             btn4.setBackgroundColor(Color.RED);
-                        } else btn4.setVisibility(View.INVISIBLE);
+                        } else{
+                            Vazhdo();
+                            btn4.setVisibility(View.INVISIBLE);
+                        }
                     }
                 }
                 else
@@ -389,7 +440,11 @@ public class MainActivity extends AppCompatActivity {
                         if (nrRadhes != btn5.getText().toString()) {
                             HumbetLojen();
                             btn5.setBackgroundColor(Color.RED);
-                        } else btn5.setVisibility(View.INVISIBLE);
+                        } else
+                        {
+                            Vazhdo();
+                            btn5.setVisibility(View.INVISIBLE);
+                        }
                     }
                 }
                 else
@@ -417,7 +472,10 @@ public class MainActivity extends AppCompatActivity {
                             HumbetLojen();
                             btn6.setBackgroundColor(Color.RED);
                         }
-                        else btn6.setVisibility(View.INVISIBLE);
+                        else {
+                            Vazhdo();
+                            btn6.setVisibility(View.INVISIBLE);
+                        }
                     }
                 }
                 else

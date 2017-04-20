@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="game.fastgenius.HighScore"
+    android:background="@drawable/grad">
+
+    <ScrollView
+        android:id="@+id/login_form"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="15dp">
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="18dp"
+            android:paddingBottom="15dp"
+            android:id="@+id/tlPjesaRekordeve">
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="47dp"
+                    android:textSize="18dp"
+                    android:text="@string/user"
+                    android:textColor="#503fff"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="45dp"
+                    android:textSize="18dp"
+                    android:text="@string/piket"
+                    android:textColor="#503fff"
+                    />
+            </TableRow>
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:text=" ---------------------------------------------- "
+                android:id="@+id/txtVijaHorizontale"
+                android:textColor="#503fff"
+                />
+            <TableRow
+                android:background="#CCBFFF">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#003ff5"
+                    android:textSize="18dp"
+                    android:layout_gravity="left"
+                    android:id="@+id/rekordiUser"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="18dp"
+                    android:textColor="#003ff5"
+                    android:layout_gravity="right"
+                    android:id="@+id/rekordiPiket"
+                    />
+            </TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:layout_marginTop="10dp"
+                android:textSize="15dp"
+                android:text="@string/reset_rekordet"
+                android:textColor="#7F0000"
+                android:id="@+id/tvFshijDB"/>
+        </TableLayout>
+    </ScrollView>
+
+</RelativeLayout>

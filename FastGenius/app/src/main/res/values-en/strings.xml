@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Speeds wisely</string>
+    <string name="Exit">Exit Game</string>
+    <string name="HighScore">HighScores</string>
+    <string name="Option">Option</string>
+    <string name="PershkrimiLojes">The game will start when you click button \"Start Now\"! Try this, good locky!</string>
+    <string name="action_sign_in">Open Game</string>
+    <string name="action_sign_in_short">Open Game</string>
+    <string name="menu_action_about_us">Info about App</string>
+    <string name="menu_action_setting">Option</string>
+    <string name="piket">Record</string>
+    <string name="prompt_user">Your name</string>
+    <string name="reset_rekordet">Reset all records</string>
+    <string name="title_activity_hyrja">Write your name</string>
+    <string name="user">User</string>
+    <string name="fillo_tani">Start now</string>
+    <string name="about_us">Speeds wisely - vz1.0\n\nThis game has been developed in the subject of Mobile Device Programing, the idea of prof. Arbnor Halili was developed by student Arton Hoti.\n\n© Arton Hoti\nArti._3@hotmail.com</string>
+    <string name="PershkrimiLojesNdihme">In this game, you have to press the order numbers (from the smallest number to the largest number) and as fast as possible!</string>
+</resources>

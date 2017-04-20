@@ -14,5 +14,6 @@ public class Parameters {
     public static String vcRekordi="vcRekordi";
 
     public static String emri="";
+    public static boolean Audio=true;
 
 }
