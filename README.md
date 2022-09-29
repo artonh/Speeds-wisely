@@ -1,4 +1,4 @@
 # Speeds-wisely
-Nje loje ne Android, ne te cilen gjenerohen 6 numra random(te mundeshem prej 1 deri 9) pastaj ju duhet te i shtypni numrat me rend (prej numrit me te vogelit deri te me i madhi) dhe sa me shpejte qe te jete e mundur!
+One simple Android game that will generate random 6 numbers from 1 to 9, these numbers will appear in random places, and the user has to touch the numbers (or push buttons) from the smallest to the greater for the shortest possible time!
 
-Loja eshte funksionale por nuk eshte ende e perfunduar. Do t'i shtoj levelet e veshtiresise, modin e lojes{nje mode ne te cilen do te kete nje kohe te caktuar psh 5sec, per kaq kohe do te perfundoj loja ..ne kete mode do te shtoj edhe nje animacion ku do te dali nje figure(BONUSE) e cila nese klikohet do te fitoj ate bonus(njehere mendoj se do te jete SECONDS+, ndoshta do te bej COINs)} dhe do te permiresoj dizajnin e lojes.
+It is currently functional, but it's not finished as I had in plan to add more levels and to change the game mode(having the possibility to play with time, ex. 5sec. remaining to end the game and getting involed with the animations so one figure(as BONUSE) will be appeared and if user touched it he will earn extra time(as initial point, +5seconds and later on to think about coins) and to enhance the Graphic/UI/UX of the game!
